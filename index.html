@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#0a0a0b" id="themeColorMeta" />
+  <meta name="description" content="MikroTrader — Institutional Multi-Asset Trading Terminal" />
+  <title>MikroTrader | Institutional Trading Terminal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=10.3" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='4' y1='2' x2='44' y2='46'%3E%3Cstop stop-color='%235eead4'/%3E%3Cstop offset='.5' stop-color='%232dd4bf'/%3E%3Cstop offset='1' stop-color='%230f766e'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='2' y='2' width='44' height='44' rx='12' fill='url(%23g)'/%3E%3Cpath d='M12.5 34.5V15.5L20.2 28.2L24 20.8L27.8 28.2L35.5 15.5V34.5' stroke='%23042f2e' stroke-width='3.6' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='35.5' cy='14.2' r='2.2' fill='%23d4af37'/%3E%3C/svg%3E" /><rect fill='%2300d4aa' rx='20' width='100' height='100'/><text x='50' y='68' font-size='55' text-anchor='middle' fill='%230a0e17' font-family='Arial' font-weight='bold'>M</text></svg>" />
+</head>
+<body>
+  <!-- BOOT / SPLASH -->
+  <div id="splash" class="splash">
+    <div class="splash-inner">
+      <div class="splash-logo">
+        <div class="logo-mark" aria-hidden="true">
+          <svg class="logo-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <linearGradient id="lgBg1" x1="4" y1="2" x2="44" y2="46" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5eead4"/>
+      <stop offset="0.4" stop-color="#2dd4bf"/>
+      <stop offset="0.75" stop-color="#14b8a6"/>
+      <stop offset="1" stop-color="#0f766e"/>
+    </linearGradient>
+    <linearGradient id="lgSheen1" x1="12" y1="4" x2="36" y2="28" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="lgInk1" x1="12" y1="10" x2="36" y2="38" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#042f2e"/>
+      <stop offset="1" stop-color="#064e3b"/>
+    </linearGradient>
+    <linearGradient id="lgGold1" x1="28" y1="10" x2="40" y2="34" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f5e6a3"/>
+      <stop offset="1" stop-color="#c9a227"/>
+    </linearGradient>
+  </defs>
+  <!-- plate -->
+  <rect x="2" y="2" width="44" height="44" rx="12" fill="url(#lgBg1)"/>
+  <rect x="2.75" y="2.75" width="42.5" height="42.5" rx="11.25" stroke="#fff" stroke-opacity="0.22" stroke-width="1.1"/>
+  <path d="M8 14c0-5 4-9 10-9h12c6 0 10 4 10 9v3H8v-3z" fill="url(#lgSheen1)"/>
+  <!-- stylized M + rising market -->
+  <path d="M12.5 34.5V15.5L20.2 28.2L24 20.8L27.8 28.2L35.5 15.5V34.5"
+        stroke="url(#lgInk1)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.92"/>
+  <path d="M12.5 34.5V15.5L20.2 28.2L24 20.8L27.8 28.2L35.5 15.5V34.5"
+        stroke="#ecfeff" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.35"/>
+  <!-- golden tip candle on peak -->
+  <circle cx="35.5" cy="14.2" r="2.15" fill="url(#lgGold1)"/>
+  <circle cx="35.5" cy="14.2" r="3.4" fill="#f0d78c" opacity="0.25"/>
+</svg>
+        </div>
+        <div class="logo-wordmark">
+          <div class="logo-text brand-3d-host brand-3d-lg"><span class="brand-3d is-splash" aria-label="MikroTrader"><span class="brand-3d-inner"><span class="bn-word"><span data-ch="M" class="bn-letter bn-main" style="--i:0">M</span><span data-ch="i" class="bn-letter bn-main" style="--i:1">i</span><span data-ch="k" class="bn-letter bn-main" style="--i:2">k</span><span data-ch="r" class="bn-letter bn-main" style="--i:3">r</span><span data-ch="o" class="bn-letter bn-main" style="--i:4">o</span></span><span class="bn-word bn-trader"><span data-ch="T" class="bn-letter bn-accent" style="--i:0">T</span><span data-ch="r" class="bn-letter bn-accent" style="--i:1">r</span><span data-ch="a" class="bn-letter bn-accent" style="--i:2">a</span><span data-ch="d" class="bn-letter bn-accent" style="--i:3">d</span><span data-ch="e" class="bn-letter bn-accent" style="--i:4">e</span><span data-ch="r" class="bn-letter bn-accent" style="--i:5">r</span></span></span></span></div>
+          <div class="logo-tagline">Institutional Trading Terminal</div>
+        </div>
+      </div>
+      <div class="splash-bar"><div class="splash-bar-fill" id="splashFill"></div></div>
+      <div class="splash-status" id="splashStatus">Booting market engine…</div>
+      <div class="splash-ver">Terminal v10 · Institutional Desk · Secure Session</div>
+    </div>
+  </div>
+
+  <!-- LOGIN -->
+  <div id="loginScreen" class="login-screen hidden">
+    <div class="login-bg"></div>
+    <div class="login-card">
+      <div class="login-brand" id="loginBrand">
+        <div class="logo-mark sm" aria-hidden="true">
+          <svg class="logo-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <linearGradient id="lgBg2" x1="4" y1="2" x2="44" y2="46" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5eead4"/>
+      <stop offset="0.4" stop-color="#2dd4bf"/>
+      <stop offset="0.75" stop-color="#14b8a6"/>
+      <stop offset="1" stop-color="#0f766e"/>
+    </linearGradient>
+    <linearGradient id="lgSheen2" x1="12" y1="4" x2="36" y2="28" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="lgInk2" x1="12" y1="10" x2="36" y2="38" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#042f2e"/>
+      <stop offset="1" stop-color="#064e3b"/>
+    </linearGradient>
+    <linearGradient id="lgGold2" x1="28" y1="10" x2="40" y2="34" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f5e6a3"/>
+      <stop offset="1" stop-color="#c9a227"/>
+    </linearGradient>
+  </defs>
+  <!-- plate -->
+  <rect x="2" y="2" width="44" height="44" rx="12" fill="url(#lgBg2)"/>
+  <rect x="2.75" y="2.75" width="42.5" height="42.5" rx="11.25" stroke="#fff" stroke-opacity="0.22" stroke-width="1.1"/>
+  <path d="M8 14c0-5 4-9 10-9h12c6 0 10 4 10 9v3H8v-3z" fill="url(#lgSheen2)"/>
+  <!-- stylized M + rising market -->
+  <path d="M12.5 34.5V15.5L20.2 28.2L24 20.8L27.8 28.2L35.5 15.5V34.5"
+        stroke="url(#lgInk2)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.92"/>
+  <path d="M12.5 34.5V15.5L20.2 28.2L24 20.8L27.8 28.2L35.5 15.5V34.5"
+        stroke="#ecfeff" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.35"/>
+  <!-- golden tip candle on peak -->
+  <circle cx="35.5" cy="14.2" r="2.15" fill="url(#lgGold2)"/>
+  <circle cx="35.5" cy="14.2" r="3.4" fill="#f0d78c" opacity="0.25"/>
+</svg>
+        </div>
+        <div class="logo-wordmark">
+          <div class="login-title brand-3d-host brand-3d-md"><span class="brand-3d is-login" aria-label="MikroTrader"><span class="brand-3d-inner"><span class="bn-word"><span data-ch="M" class="bn-letter bn-main" style="--i:0">M</span><span data-ch="i" class="bn-letter bn-main" style="--i:1">i</span><span data-ch="k" class="bn-letter bn-main" style="--i:2">k</span><span data-ch="r" class="bn-letter bn-main" style="--i:3">r</span><span data-ch="o" class="bn-letter bn-main" style="--i:4">o</span></span><span class="bn-word bn-trader"><span data-ch="T" class="bn-letter bn-accent" style="--i:0">T</span><span data-ch="r" class="bn-letter bn-accent" style="--i:1">r</span><span data-ch="a" class="bn-letter bn-accent" style="--i:2">a</span><span data-ch="d" class="bn-letter bn-accent" style="--i:3">d</span><span data-ch="e" class="bn-letter bn-accent" style="--i:4">e</span><span data-ch="r" class="bn-letter bn-accent" style="--i:5">r</span></span></span></span></div>
+          <div class="login-sub">Multi-Asset Institutional Desk</div>
+        </div>
+      </div>
+      <div class="login-tabs">
+        <button class="login-tab active" data-tab="signin">Sign In</button>
+        <button class="login-tab" data-tab="register">Open Account</button>
+      </div>
+      <form id="loginForm" class="login-form" autocomplete="off">
+        <div class="field">
+          <label>Account / Email</label>
+          <input type="text" id="loginUser" placeholder="trader@email.com" required />
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <div class="pw-wrap">
+            <input type="password" id="loginPass" placeholder="••••••••" required />
+            <button type="button" class="pw-toggle" id="pwToggle" aria-label="Show password"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg></button>
+          </div>
+        </div>
+        <div class="login-row">
+          <label class="chk"><input type="checkbox" id="rememberMe" checked /> Remember me</label>
+          <a href="#" class="link-muted" id="forgotLink">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" id="loginBtn">Sign in to Terminal</button>
+        <div class="login-demo">
+          <button type="button" class="btn btn-ghost btn-block" id="demoBtn">Enter Demo Desk</button>
+        </div>
+      </form>
+      <form id="registerForm" class="login-form hidden" autocomplete="off">
+        <div class="field">
+          <label>Full Name</label>
+          <input type="text" id="regName" placeholder="Your full name" required />
+        </div>
+        <div class="field">
+          <label>Email</label>
+          <input type="email" id="regEmail" placeholder="you@email.com" required />
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <input type="password" id="regPass" placeholder="Min. 8 characters" required minlength="6" />
+        </div>
+        <div class="field">
+          <label>Account Type</label>
+          <select id="regType">
+            <option value="standard">Standard Account</option>
+            <option value="pro">Pro Account</option>
+            <option value="vip">VIP Account</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Open Account</button>
+      </form>
+      <div class="login-footer">
+        <span>Server: Mikro-Live-01 · Latency <b id="pingMs">12</b>ms</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN APP -->
+  <div id="app" class="app hidden">
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="brand" id="brandBtn" title="MikroTrader — Control Center" type="button">
+          <div class="logo-mark xs" aria-hidden="true">
+            <svg class="logo-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <linearGradient id="lgBg3" x1="4" y1="2" x2="44" y2="46" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5eead4"/>
+      <stop offset="0.4" stop-color="#2dd4bf"/>
+      <stop offset="0.75" stop-color="#14b8a6"/>
+      <stop offset="1" stop-color="#0f766e"/>
+    </linearGradient>
+    <linearGradient id="lgSheen3" x1="12" y1="4" x2="36" y2="28" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="lgInk3" x1="12" y1="10" x2="36" y2="38" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#042f2e"/>
+      <stop offset="1" stop-color="#064e3b"/>
+    </linearGradient>
+    <linearGradient id="lgGold3" x1="28" y1="10" x2="40" y2="34" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f5e6a3"/>
+      <stop offset="1" stop-color="#c9a227"/>
+    </linearGradient>
+  </defs>
+  <!-- plate -->
+  <rect x="2" y="2" width="44" height="44" rx="12" fill="url(#lgBg3)"/>
+  <rect x="2.75" y="2.75" width="42.5" height="42.5" rx="11.25" stroke="#fff" stroke-opacity="0.22" stroke-width="1.1"/>
+  <path d="M8 14c0-5 4-9 10-9h12c6 0 10 4 10 9v3H8v-3z" fill="url(#lgSheen3)"/>
+  <!-- stylized M + rising market -->
+  <path d="M12.5 34.5V15.5L20.2 28.2L24 20.8L27.8 28.2L35.5 15.5V34.5"
+        stroke="url(#lgInk3)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.92"/>
+  <path d="M12.5 34.5V15.5L20.2 28.2L24 20.8L27.8 28.2L35.5 15.5V34.5"
+        stroke="#ecfeff" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.35"/>
+  <!-- golden tip candle on peak -->
+  <circle cx="35.5" cy="14.2" r="2.15" fill="url(#lgGold3)"/>
+  <circle cx="35.5" cy="14.2" r="3.4" fill="#f0d78c" opacity="0.25"/>
+</svg>
+          </div>
+          <span class="brand-name logo-wordmark">
+            <span class="brand-title brand-3d-host brand-3d-sm"><span class="brand-3d is-topbar" aria-label="MikroTrader"><span class="brand-3d-inner"><span class="bn-word"><span data-ch="M" class="bn-letter bn-main" style="--i:0">M</span><span data-ch="i" class="bn-letter bn-main" style="--i:1">i</span><span data-ch="k" class="bn-letter bn-main" style="--i:2">k</span><span data-ch="r" class="bn-letter bn-main" style="--i:3">r</span><span data-ch="o" class="bn-letter bn-main" style="--i:4">o</span></span><span class="bn-word bn-trader"><span data-ch="T" class="bn-letter bn-accent" style="--i:0">T</span><span data-ch="r" class="bn-letter bn-accent" style="--i:1">r</span><span data-ch="a" class="bn-letter bn-accent" style="--i:2">a</span><span data-ch="d" class="bn-letter bn-accent" style="--i:3">d</span><span data-ch="e" class="bn-letter bn-accent" style="--i:4">e</span><span data-ch="r" class="bn-letter bn-accent" style="--i:5">r</span></span></span></span></span>
+            <span class="brand-sub">INSTITUTIONAL</span>
+          </span>
+        </button>
+        <div class="server-badge">
+          <span class="pulse-dot"></span>
+          <span>LIVE</span>
+          <span class="sep">·</span>
+          <span id="serverName">Mikro-Live-01</span>
+        </div>
+      </div>
+      <div class="topbar-center">
+        <div class="clock-block">
+          <span id="serverTime">00:00:00</span>
+          <span class="clock-label">SERVER TIME (UTC)</span>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <div class="account-switcher" id="accountSwitcher">
+          <button type="button" class="balance-chip account-chip" id="balanceChip" title="Pilih akun Real / Demo" aria-haspopup="true" aria-expanded="false">
+            <div class="bc-top">
+              <div class="bc-label">Balance</div>
+              <span class="acc-mode-badge demo" id="accModeBadge">DEMO</span>
+            </div>
+            <div class="bc-val" id="headerBalance">$10,000.00</div>
+            <div class="bc-acc-hint" id="bcAccHint">Akun Demo · klik ganti</div>
+          </button>
+          <div class="acc-dropdown" id="accDropdown" role="menu" hidden>
+            <div class="acc-dd-head">Pilih Akun</div>
+            <button type="button" class="acc-option" data-acc="real" role="menuitem">
+              <div class="acc-opt-left">
+                <span class="acc-opt-badge real">REAL</span>
+                <div>
+                  <div class="acc-opt-name">Akun Real</div>
+                  <div class="acc-opt-sub">Live trading · dana nyata (sim)</div>
+                </div>
+              </div>
+              <div class="acc-opt-right">
+                <strong class="acc-opt-bal" id="accRealBal">$0.00</strong>
+                <span class="acc-opt-check" aria-hidden="true">✓</span>
+              </div>
+            </button>
+            <button type="button" class="acc-option active" data-acc="demo" role="menuitem">
+              <div class="acc-opt-left">
+                <span class="acc-opt-badge demo">DEMO</span>
+                <div>
+                  <div class="acc-opt-name">Akun Demo</div>
+                  <div class="acc-opt-sub">Latihan · virtual funds</div>
+                </div>
+              </div>
+              <div class="acc-opt-right">
+                <strong class="acc-opt-bal" id="accDemoBal">$10,000.00</strong>
+                <span class="acc-opt-check" aria-hidden="true">✓</span>
+              </div>
+            </button>
+            <div class="acc-dd-foot">Saldo &amp; posisi terpisah per akun</div>
+          </div>
+        </div>
+        <div class="balance-chip equity">
+          <div class="bc-label">Equity</div>
+          <div class="bc-val" id="headerEquity">$10,000.00</div>
+        </div>
+        <div class="balance-chip pnl" id="pnlChip">
+          <div class="bc-label">P/L</div>
+          <div class="bc-val" id="headerPnL">$0.00</div>
+        </div>
+        <button class="icon-btn ghost theme-toggle-btn" id="themeToggleBtn" title="Tema tampilan">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <span id="themeToggleLabel">Tema</span>
+        </button>
+        <button class="icon-btn ghost stocks-nav-btn" id="openStocksBtn" title="Saham">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
+          <span>Saham</span>
+        </button>
+        <button class="icon-btn ghost portfolio-nav-btn" id="openPortfolioBtn" title="Portofolio Saham">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          <span>Portofolio</span>
+        </button>
+        <button class="icon-btn" id="depositBtn" title="Deposit">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 7H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          <span>Deposit</span>
+        </button>
+        <button class="icon-btn ghost" id="withdrawBtn" title="Withdraw">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+          <span>Withdraw</span>
+        </button>
+        <div class="user-menu" id="userMenu">
+          <button type="button" class="user-btn" id="userBtn" aria-haspopup="true" aria-expanded="false">
+            <div class="avatar" id="userAvatar">T</div>
+            <div class="user-meta">
+              <span class="user-name" id="userName">Trader</span>
+              <span class="user-acc" id="userAcc">#1002341</span>
+            </div>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown" id="userDropdown">
+            <button data-action="profile">Profile</button>
+            <button data-action="history">Trade History</button>
+            <button data-action="settings">Settings</button>
+            <hr />
+            <button data-action="logout" class="danger">Disconnect</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- WORKSPACE -->
+    <div class="workspace">
+      <!-- LEFT: Market Watch (FX / Crypto / Indices / Commodities) -->
+      <aside class="sidebar left-side" id="leftSide">
+        <div class="panel-head">
+          <span>Market Watch<//span>
+          <div class="panel-actions">
+            <button class="mini-btn" id="refreshSymbols" title="Refresh">↻</button>
+            <button class="mini-btn" id="toggleLeft" title="Collapse">‹</button>
+          </div>
+        </div>
+        <div class="search-box">
+          <input type="text" id="symbolSearch" placeholder="Search FX, crypto..." />
+        </div>
+        <div class="symbol-tabs">
+          <button class="stab active" data-cat="all">All</button>
+          <button class="stab" data-cat="forex">Forex</button>
+          <button class="stab" data-cat="crypto">Crypto</button>
+          <button class="stab" data-cat="indices">Indices</button>
+          <button class="stab" data-cat="commodities">Commodities</button>
+        </div>
+        <div class="symbol-list" id="symbolList"></div>
+      </aside>
+
+      <!-- CENTER: Chart + Trade -->
+      <main class="main-area">
+        <div class="chart-toolbar">
+          <div class="pair-info">
+            <span class="pair-name" id="activePair">EURUSD</span>
+            <span class="pair-desc" id="activePairDesc">Euro vs US Dollar</span>
+            <span class="pair-change up" id="pairChange">+0.12%</span>
+          </div>
+          <div class="tf-group" id="tfGroup">
+            <button class="tf" data-tf="1m">M1</button>
+            <button class="tf" data-tf="5m">M5</button>
+            <button class="tf active" data-tf="15m">M15</button>
+            <button class="tf" data-tf="1h">H1</button>
+            <button class="tf" data-tf="4h">H4</button>
+            <button class="tf" data-tf="1d">D1</button>
+          </div>
+          <div class="chart-tools">
+            <div class="chart-type-wrap" id="chartTypeWrap">
+              <button type="button" class="tool-btn chart-type-btn active" id="chartTypeBtn" title="Tipe grafik">
+                <span class="ct-icon" id="ctIcon">▣</span>
+                <span class="ct-label" id="ctLabel">Candle</span>
+                <svg class="ct-caret" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+              </button>
+              <div class="chart-type-menu" id="chartTypeMenu" hidden>
+                <div class="ct-menu-head">Chart Type</div>
+                <div class="ct-menu-grid" id="chartTypeGrid">
+                  <button type="button" class="ct-item active" data-chart="candle" title="Candlestick klasik">
+                    <span class="ct-i">▣</span><span class="ct-n">Candles</span><span class="ct-d">OHLC body</span>
+                  </button>
+                  <button type="button" class="ct-item" data-chart="hollow" title="Hollow candles">
+                    <span class="ct-i">▢</span><span class="ct-n">Hollow</span><span class="ct-d">Bull hollow</span>
+                  </button>
+                  <button type="button" class="ct-item" data-chart="heikin" title="Heikin Ashi">
+                    <span class="ct-i">◈</span><span class="ct-n">Heikin Ashi</span><span class="ct-d">Trend smooth</span>
+                  </button>
+                  <button type="button" class="ct-item" data-chart="bars" title="OHLC Bars">
+                    <span class="ct-i">⊞</span><span class="ct-n">Bars</span><span class="ct-d">OHLC ticks</span>
+                  </button>
+                  <button type="button" class="ct-item" data-chart="line" title="Line close">
+                    <span class="ct-i">╱</span><span class="ct-n">Line</span><span class="ct-d">Close path</span>
+                  </button>
+                  <button type="button" class="ct-item" data-chart="markers" title="Line with markers">
+                    <span class="ct-i">⋯</span><span class="ct-n">Markers</span><span class="ct-d">Line + dots</span>
+                  </button>
+                  <button type="button" class="ct-item" data-chart="step" title="Step line">
+                    <span class="ct-i">⊟</span><span class="ct-n">Step</span><span class="ct-d">Stair close</span>
+                  </button>
+                  <button type="button" class="ct-item" data-chart="area" title="Area">
+                    <span class="ct-i">▭</span><span class="ct-n">Area</span><span class="ct-d">Filled close</span>
+                  </button>
+                  <button type="button" class="ct-item" data-chart="baseline" title="Baseline">
+                    <span class="ct-i">═</span><span class="ct-n">Baseline</span><span class="ct-d">Above/below</span>
+                  </button>
+                  <button type="button" class="ct-item" data-chart="mountain" title="Mountain">
+                    <span class="ct-i">⛰</span><span class="ct-n">Mountain</span><span class="ct-d">Soft gradient</span>
+                  </button>
+                  <button type="button" class="ct-item" data-chart="hlc" title="High-Low">
+                    <span class="ct-i">↕</span><span class="ct-n">High-Low</span><span class="ct-d">Range only</span>
+                  </button>
+                  <button type="button" class="ct-item" data-chart="columns" title="Columns">
+                    <span class="ct-i">▮</span><span class="ct-n">Columns</span><span class="ct-d">Body columns</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <button class="tool-btn" id="indBtn" title="Indicators">ƒx</button>
+            <span class="tool-sep"></span>
+            <button class="tool-btn" id="panLeft" title="Pan left">◀</button>
+            <button class="tool-btn" id="zoomOut" title="Zoom out (−)">−</button>
+            <span class="zoom-level" id="zoomLevel" title="Zoom level · double-click chart to reset">100%</span>
+            <button class="tool-btn" id="zoomIn" title="Zoom in (+)">+</button>
+            <button class="tool-btn" id="zoomReset" title="Reset zoom">↺</button>
+            <button class="tool-btn" id="panRight" title="Pan right">▶</button>
+            <button class="tool-btn" id="panLive" title="Jump to live">●</button>
+            <span class="tool-sep"></span>
+            <button class="tool-btn" id="fullscreenChart" title="Fullscreen">⛶</button>
+          </div>
+          <div class="tick-prices">
+            <div class="tick bid">
+              <span class="t-label">BID</span>
+              <span class="t-val" id="bidPrice">1.08421</span>
+            </div>
+            <div class="tick spread">
+              <span class="t-label">SPREAD</span>
+              <span class="t-val" id="spreadVal">1.2</span>
+            </div>
+            <div class="tick ask">
+              <span class="t-label">ASK</span>
+              <span class="t-val" id="askPrice">1.08433</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="chart-wrap mt5-chart" id="chartWrap">
+          <canvas id="chartCanvas"></canvas>
+          <div class="chart-overlay-info mt5-ohlc" id="chartCrosshair">
+            <div id="ohlcInfo">O: — H: — L: — C: —</div>
+          </div>
+          <div class="chart-zoom-fab" id="chartZoomFab">
+            <button type="button" id="fabZoomIn" title="Zoom in">+</button>
+            <button type="button" id="fabZoomOut" title="Zoom out">−</button>
+            <button type="button" id="fabZoomReset" title="Reset">↺</button>
+          </div>
+          <div class="chart-hint" id="chartHint">Scroll zoom · Drag pan · +/− · Double-click reset</div>
+        </div>
+
+        <!-- Bottom panels -->
+        <div class="bottom-panels">
+          <div class="bp-tabs">
+            <button class="bp-tab active" data-panel="positions">Positions <span class="badge" id="posCount">0</span></button>
+            <button class="bp-tab" data-panel="orders">Pending Orders <span class="badge" id="ordCount">0</span></button>
+            <button class="bp-tab" data-panel="history">History</button>
+            <button class="bp-tab" data-panel="journal">Journal</button>
+          </div>
+          <div class="bp-body">
+            <div class="bp-panel active" id="panel-positions">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Ticket</th>
+                    <th>Symbol</th>
+                    <th>Type</th>
+                    <th>Volume</th>
+                    <th>Open Price</th>
+                    <th>Current</th>
+                    <th>S/L</th>
+                    <th>T/P</th>
+                    <th>Profit</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="positionsBody">
+                  <tr class="empty-row"><td colspan="10">No open positions — place a trade to get started</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="bp-panel" id="panel-orders">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Ticket</th>
+                    <th>Symbol</th>
+                    <th>Type</th>
+                    <th>Volume</th>
+                    <th>Price</th>
+                    <th>S/L</th>
+                    <th>T/P</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="ordersBody">
+                  <tr class="empty-row"><td colspan="8">No pending orders</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="bp-panel" id="panel-history">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Time</th>
+                    <th>Ticket</th>
+                    <th>Symbol</th>
+                    <th>Type</th>
+                    <th>Volume</th>
+                    <th>Price</th>
+                    <th>Profit</th>
+                    <th>Comment</th>
+                  </tr>
+                </thead>
+                <tbody id="historyBody">
+                  <tr class="empty-row"><td colspan="8">No trade history</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="bp-panel" id="panel-journal">
+              <div class="journal-log" id="journalLog"></div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- RIGHT: Order Ticket + Account -->
+      <aside class="sidebar right-side" id="rightSide">
+        <div class="panel-head">
+          <span>Order Ticket</span>
+          <button class="mini-btn" id="toggleRight" title="Collapse">›</button>
+        </div>
+
+        <div class="order-ticket">
+          <div class="ot-symbol">
+            <span id="otSymbol">EURUSD</span>
+            <span class="ot-type-badge" id="otMarket">MARKET</span>
+          </div>
+
+          <div class="price-big">
+            <button class="side-btn sell" id="quickSell">
+              <span class="sb-label">SELL</span>
+              <span class="sb-price" id="sellBtnPrice">1.08421</span>
+            </button>
+            <button class="side-btn buy" id="quickBuy">
+              <span class="sb-label">BUY</span>
+              <span class="sb-price" id="buyBtnPrice">1.08433</span>
+            </button>
+          </div>
+
+          <div class="field">
+            <label>Volume (Lots)</label>
+            <div class="lot-ctrl">
+              <button class="lot-btn" id="lotMinus">−</button>
+              <input type="number" id="lotSize" value="0.10" min="0.01" max="100" step="0.01" />
+              <button class="lot-btn" id="lotPlus">+</button>
+            </div>
+            <div class="lot-presets">
+              <button data-lot="0.01">0.01</button>
+              <button data-lot="0.10">0.10</button>
+              <button data-lot="0.50">0.50</button>
+              <button data-lot="1.00">1.00</button>
+              <button data-lot="5.00">5.00</button>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label>Stop Loss</label>
+              <input type="number" id="slInput" placeholder="Optional" step="0.00001" />
+            </div>
+            <div class="field">
+              <label>Take Profit</label>
+              <input type="number" id="tpInput" placeholder="Optional" step="0.00001" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Order Type</label>
+            <select id="orderType">
+              <option value="market">Market Execution</option>
+              <option value="limit">Pending Limit</option>
+              <option value="stop">Pending Stop</option>
+            </select>
+          </div>
+
+          <div class="field hidden" id="pendingPriceField">
+            <label>Pending Price</label>
+            <input type="number" id="pendingPrice" step="0.00001" />
+          </div>
+
+          <div class="margin-info">
+            <div class="mi-row"><span>Required Margin</span><span id="reqMargin">$0.00</span></div>
+            <div class="mi-row"><span>Free Margin</span><span id="freeMargin">$10,000.00</span></div>
+            <div class="mi-row"><span>Leverage</span><span id="leverageInfo">1:100</span></div>
+            <div class="mi-row"><span>Pip Value</span><span id="pipValue">$1.00</span></div>
+          </div>
+
+          <div class="ot-actions">
+            <button class="btn btn-sell btn-block" id="placeSell">SELL <span id="sellLotLabel">0.10</span></button>
+            <button class="btn btn-buy btn-block" id="placeBuy">BUY <span id="buyLotLabel">0.10</span></button>
+          </div>
+        </div>
+
+        <div class="account-summary">
+          <div class="panel-head sm">
+            <span>Account Summary</span>
+            <button type="button" class="acc-mode-pill" id="asAccModeBtn" title="Ganti akun">
+              <span id="asAccModeLabel">DEMO</span>
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+          </div>
+          <div class="as-grid">
+            <div class="as-item">
+              <span class="as-l">Balance</span>
+              <span class="as-v" id="asBalance">$10,000.00</span>
+            </div>
+            <div class="as-item">
+              <span class="as-l">Equity</span>
+              <span class="as-v" id="asEquity">$10,000.00</span>
+            </div>
+            <div class="as-item">
+              <span class="as-l">Margin</span>
+              <span class="as-v" id="asMargin">$0.00</span>
+            </div>
+            <div class="as-item">
+              <span class="as-l">Free Margin</span>
+              <span class="as-v" id="asFree">$10,000.00</span>
+            </div>
+            <div class="as-item">
+              <span class="as-l">Margin Level</span>
+              <span class="as-v" id="asLevel">—</span>
+            </div>
+            <div class="as-item">
+              <span class="as-l">Open P/L</span>
+              <span class="as-v" id="asPnL">$0.00</span>
+            </div>
+          </div>
+          <div class="account-reset-wrap">
+            <button type="button" class="btn-reset-balance" id="resetBalanceBtn" title="Restore balance to $10,000">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
+              Reset Balance
+            </button>
+            <button type="button" class="btn-reset-portfolio" id="resetPortfolioBtn" title="Hapus semua holding saham / reset portofolio">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/></svg>
+              Reset Portofolio
+            </button>
+          </div>
+        </div>
+
+        <div class="quick-actions">
+          <button class="qa-btn" id="qaDeposit">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            Deposit Funds
+          </button>
+          <button class="qa-btn" id="qaWithdraw">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+            Withdraw Funds
+          </button>
+          <button class="qa-btn danger" id="closeAllBtn">Close All Positions</button>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Mobile bottom nav -->
+    <nav class="mobile-nav" id="mobileNav">
+      <button class="mn-btn active" data-view="chart">Chart</button>
+      <button class="mn-btn" data-view="watch">Watch</button>
+      <button class="mn-btn" data-view="stocks">Saham</button>
+      <button class="mn-btn" data-view="trade">Trade</button>
+      <button class="mn-btn" data-view="positions">Pos</button>
+      <button class="mn-btn" data-view="account">Akun</button>
+    </nav>
+
+    <!-- FULL SCREEN SAHAM VIEW -->
+    <div id="stocksView" class="stocks-view hidden" aria-hidden="true">
+      <button type="button" class="sv-back-fab" id="svBackFab" title="Kembali ke Terminal" aria-label="Kembali ke Terminal">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M19 12H5"/>
+          <path d="M12 19l-7-7 7-7"/>
+        </svg>
+        <span>Kembali</span>
+      </button>
+      <div class="sv-top">
+        <div class="sv-top-left">
+          <button type="button" class="sv-back" id="closeStocksBtn" title="Kembali ke Terminal">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M19 12H5"/>
+              <path d="M12 19l-7-7 7-7"/>
+            </svg>
+            <span class="sv-back-label">Kembali</span>
+          </button>
+          <div class="sv-title-wrap">
+            <h2 class="sv-title" id="svTitle">Saham</h2>
+            <span class="sv-sub" id="svSub">Bursa Efek Indonesia · Live</span>
+          </div>
+        </div>
+        <div class="sv-main-tabs" id="svMainTabs">
+          <button type="button" class="sv-mtab active" data-svtab="market">Pasar</button>
+          <button type="button" class="sv-mtab" data-svtab="portfolio">Portofolio <span class="sv-mtab-badge" id="pfBadge">0</span></button>
+        </div>
+        <div class="stock-market-tabs sv-tabs" id="stockMarketTabs">
+          <button type="button" class="smt active" data-smarket="idx">IDX Indonesia</button>
+          <button type="button" class="smt" data-smarket="us">US Stocks</button>
+        </div>
+        <div class="sv-search" id="svSearchWrap">
+          <input type="text" id="stockSearch" placeholder="Cari kode / nama saham…  BBCA, BBRI, TSLA" />
+        </div>
+      </div>
+
+      <!-- MARKET TAB -->
+      <div class="sv-body" id="svMarketBody">
+        <div class="sv-list-pane">
+          <div class="sv-list-head">
+            <span>Kode</span>
+            <span>Harga</span>
+            <span>Change</span>
+          </div>
+          <div class="stock-list" id="stockList"></div>
+        </div>
+
+        <div class="sv-detail-pane is-empty" id="stockDetail" data-selected="0">
+          <!-- Empty: belum pilih produk -->
+          <div class="sd-empty" id="sdEmpty">
+            <div class="sd-empty-icon" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 3v18h18"/>
+                <path d="M7 14l4-4 3 3 5-6"/>
+              </svg>
+            </div>
+            <div class="sd-empty-title">Pilih saham</div>
+            <div class="sd-empty-desc">Klik salah satu produk di daftar kiri untuk melihat detail harga dan order Beli / Jual.</div>
+            <div class="sd-empty-tips">
+              <span>Cari kode · BBCA, BBRI, TSLA</span>
+              <span>IDX &amp; US Stocks</span>
+            </div>
+          </div>
+
+          <!-- Filled: setelah pilih produk -->
+          <div class="sd-selected" id="sdSelected" hidden>
+            <div class="sd-hero">
+              <div class="sd-head">
+                <div>
+                  <div class="sd-code" id="sdCode">—</div>
+                  <div class="sd-name" id="sdName">—</div>
+                </div>
+                <div class="sd-head-right">
+                  <div class="sd-badge" id="sdBadge">—</div>
+                  <button type="button" class="sd-clear" id="sdClearBtn" title="Tutup detail">×</button>
+                </div>
+              </div>
+              <div class="sd-price-row">
+                <div class="sd-price" id="sdPrice">—</div>
+                <div class="sd-chg" id="sdChg">—</div>
+              </div>
+              <div class="sd-quotes">
+                <div class="sd-q">
+                  <span class="sd-ql">Bid</span>
+                  <strong id="sdBid">—</strong>
+                </div>
+                <div class="sd-q">
+                  <span class="sd-ql">Ask</span>
+                  <strong id="sdAsk">—</strong>
+                </div>
+                <div class="sd-q">
+                  <span class="sd-ql">Spread</span>
+                  <strong id="sdSpread">—</strong>
+                </div>
+                <div class="sd-q">
+                  <span class="sd-ql">Lot size</span>
+                  <strong id="sdLotInfo">100</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="sd-trade-card">
+              <div class="sd-trade-title">Order Saham</div>
+              <div class="field">
+                <label id="sdLotLabel">Lot (1 lot = 100 lembar)</label>
+                <div class="lot-ctrl">
+                  <button type="button" class="lot-btn" id="sdLotMinus">−</button>
+                  <input type="number" id="sdLot" value="1" min="0.01" max="100" step="1" />
+                  <button type="button" class="lot-btn" id="sdLotPlus">+</button>
+                </div>
+                <div class="lot-presets sd-lot-presets">
+                  <button type="button" data-sd-lot="1">1</button>
+                  <button type="button" data-sd-lot="5">5</button>
+                  <button type="button" data-sd-lot="10">10</button>
+                  <button type="button" data-sd-lot="25">25</button>
+                  <button type="button" data-sd-lot="50">50</button>
+                  <button type="button" data-sd-lot="100">100</button>
+                </div>
+              </div>
+              <div class="sd-notional">
+                <span>Estimasi nilai transaksi</span>
+                <strong id="sdNotional">—</strong>
+              </div>
+              <div class="sd-trade-btns">
+                <button type="button" class="btn btn-sell" id="sdSell">Jual</button>
+                <button type="button" class="btn btn-buy" id="sdBuy">Beli</button>
+              </div>
+              <button type="button" class="btn btn-ghost btn-block" id="sdOpenChart">Buka Chart di Terminal</button>
+              <div class="sd-hint">Market order · P/L tercatat di akun USD · 1 lot = 100 lembar/shares</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PORTFOLIO TAB -->
+      <div class="sv-portfolio hidden" id="svPortfolioBody">
+        <div class="pf-summary" id="pfSummary">
+          <div class="pf-card">
+            <span class="pf-l">Nilai Portofolio</span>
+            <strong class="pf-v" id="pfValue">$0.00</strong>
+          </div>
+          <div class="pf-card">
+            <span class="pf-l">Unrealized P/L</span>
+            <strong class="pf-v" id="pfPnL">$0.00</strong>
+          </div>
+          <div class="pf-card">
+            <span class="pf-l">Return</span>
+            <strong class="pf-v" id="pfReturn">0.00%</strong>
+          </div>
+          <div class="pf-card">
+            <span class="pf-l">Holdings</span>
+            <strong class="pf-v" id="pfCount">0</strong>
+          </div>
+          <div class="pf-card">
+            <span class="pf-l">Investasi (cost)</span>
+            <strong class="pf-v" id="pfCost">$0.00</strong>
+          </div>
+          <div class="pf-card">
+            <span class="pf-l">Hari ini (est.)</span>
+            <strong class="pf-v" id="pfDay">$0.00</strong>
+          </div>
+        </div>
+
+        <div class="pf-toolbar">
+          <div class="pf-filters" id="pfFilters">
+            <button type="button" class="pf-f active" data-pf="all">Semua</button>
+            <button type="button" class="pf-f" data-pf="idx">IDX</button>
+            <button type="button" class="pf-f" data-pf="us">US</button>
+          </div>
+          <div class="pf-actions">
+            <button type="button" class="btn btn-ghost" id="pfRefreshBtn">Refresh</button>
+            <button type="button" class="btn btn-ghost" id="pfGoMarketBtn">+ Beli Saham</button>
+          </div>
+        </div>
+
+        <div class="pf-table-wrap">
+          <table class="pf-table" id="pfTable">
+            <thead>
+              <tr>
+                <th>Kode</th>
+                <th>Nama</th>
+                <th>Side</th>
+                <th>Lot</th>
+                <th>Lembar</th>
+                <th>Avg</th>
+                <th>Last</th>
+                <th>Nilai</th>
+                <th>P/L</th>
+                <th>P/L %</th>
+                <th>Bobot</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="pfBody">
+              <tr class="empty-row"><td colspan="12">Belum ada holding saham. Beli dari tab Pasar.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pf-foot-note">
+          Portofolio digabung per kode saham dari posisi terbuka · Nilai &amp; P/L live dalam USD · Klik baris untuk buka detail order
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODALS -->
+  <div class="modal-backdrop hidden" id="modalBackdrop">
+    <!-- Deposit -->
+    <div class="modal hidden" id="depositModal">
+      <div class="modal-head">
+        <h3>Deposit Funds</h3>
+        <button class="modal-close" data-close>&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="dep-methods">
+          <button class="method active" data-method="bank"><span>🏦</span>Bank Transfer</button>
+          <button class="method" data-method="card"><span>💳</span>Credit Card</button>
+          <button class="method" data-method="crypto"><span>₿</span>Crypto</button>
+          <button class="method" data-method="ewallet"><span>📱</span>E-Wallet</button>
+        </div>
+        <div class="field">
+          <label>Amount (USD)</label>
+          <input type="number" id="depositAmount" min="10" step="10" value="500" />
+        </div>
+        <div class="amount-presets">
+          <button data-amt="100">$100</button>
+          <button data-amt="500">$500</button>
+          <button data-amt="1000">$1,000</button>
+          <button data-amt="5000">$5,000</button>
+          <button data-amt="10000">$10,000</button>
+        </div>
+        <div class="field" id="cardFields">
+          <label>Payment Reference</label>
+          <input type="text" id="payRef" placeholder="Auto-generated on confirm" readonly />
+        </div>
+        <div class="fee-note">Processing fee: <b>0%</b> · Instant credit · Secure SSL</div>
+        <button class="btn btn-primary btn-block" id="confirmDeposit">Confirm Deposit</button>
+      </div>
+    </div>
+
+    <!-- Withdraw -->
+    <div class="modal hidden" id="withdrawModal">
+      <div class="modal-head">
+        <h3>Withdraw Funds</h3>
+        <button class="modal-close" data-close>&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="avail-box">
+          <span>Available to withdraw</span>
+          <strong id="withdrawAvail">$10,000.00</strong>
+        </div>
+        <div class="field">
+          <label>Amount (USD)</label>
+          <input type="number" id="withdrawAmount" min="10" step="10" value="100" />
+        </div>
+        <div class="field">
+          <label>Withdrawal Method</label>
+          <select id="withdrawMethod">
+            <option value="bank">Bank Wire Transfer</option>
+            <option value="card">Debit Card</option>
+            <option value="crypto">Cryptocurrency</option>
+            <option value="ewallet">E-Wallet</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Destination Account</label>
+          <input type="text" id="withdrawDest" placeholder="Account / wallet address" />
+        </div>
+        <div class="fee-note">Processing time: 1–24 hours · Fee: <b>$0</b></div>
+        <button class="btn btn-primary btn-block" id="confirmWithdraw">Submit Withdrawal</button>
+      </div>
+    </div>
+
+    <!-- Indicators -->
+    <div class="modal hidden" id="indModal">
+      <div class="modal-head">
+        <h3>Indicators</h3>
+        <button class="modal-close" data-close>&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="ind-section-label">Overlays</div>
+        <label class="chk-row"><input type="checkbox" id="indMA" /> Moving Average (MA 20)</label>
+        <label class="chk-row"><input type="checkbox" id="indEMA" /> EMA 50</label>
+        <label class="chk-row"><input type="checkbox" id="indBB" /> Bollinger Bands</label>
+        <label class="chk-row"><input type="checkbox" id="indVWAP" /> VWAP (session est.)</label>
+        <div class="ind-section-label">Panels</div>
+        <label class="chk-row"><input type="checkbox" id="indRSI" /> RSI (14)</label>
+        <label class="chk-row"><input type="checkbox" id="indMACD" /> MACD (12,26,9)</label>
+        <label class="chk-row"><input type="checkbox" id="indVolume" checked /> Volume</label>
+        <div class="ind-section-label">Guides</div>
+        <label class="chk-row"><input type="checkbox" id="indGrid" checked /> Grid lines</label>
+        <label class="chk-row"><input type="checkbox" id="indCrosshair" checked /> Crosshair</label>
+        <button class="btn btn-primary btn-block" id="applyInd" data-close>Apply Indicators</button>
+      </div>
+    </div>
+
+    <!-- Profile / Settings -->
+    <div class="modal hidden" id="profileModal">
+      <div class="modal-head">
+        <h3>Account Profile</h3>
+        <button class="modal-close" data-close>&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="profile-grid">
+          <div class="as-item"><span class="as-l">Name</span><span class="as-v" id="pfName">—</span></div>
+          <div class="as-item"><span class="as-l">Account</span><span class="as-v" id="pfAcc">—</span></div>
+          <div class="as-item"><span class="as-l">Email</span><span class="as-v" id="pfEmail">—</span></div>
+          <div class="as-item"><span class="as-l">Type</span><span class="as-v" id="pfType">—</span></div>
+          <div class="as-item"><span class="as-l">Trading Mode</span><span class="as-v" id="pfMode">DEMO</span></div>
+          <div class="as-item"><span class="as-l">Leverage</span><span class="as-v">1:100</span></div>
+          <div class="as-item"><span class="as-l">Currency</span><span class="as-v">USD</span></div>
+          <div class="as-item"><span class="as-l">Server</span><span class="as-v">Mikro-Live-01</span></div>
+          <div class="as-item"><span class="as-l">Status</span><span class="as-v up">Verified</span></div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Settings / Appearance -->
+    <div class="modal hidden" id="settingsModal">
+      <div class="modal-head">
+        <h3>Settings</h3>
+        <button class="modal-close" data-close>&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="settings-section">
+          <h4>Appearance</h4>
+          <p class="settings-hint">Pilih skema warna terminal. Chart tetap classic black untuk fokus trading.</p>
+          <div class="theme-grid" id="themeGrid" role="radiogroup" aria-label="Theme">
+            <button type="button" class="theme-card active" data-theme="dark" aria-pressed="true">
+              <span class="theme-preview theme-preview-dark">
+                <span class="tp-bar"></span>
+                <span class="tp-side"></span>
+                <span class="tp-main"></span>
+              </span>
+              <span class="theme-card-name">Hitam</span>
+              <span class="theme-card-desc">Dark professional</span>
+            </button>
+            <button type="button" class="theme-card" data-theme="neutral" aria-pressed="false">
+              <span class="theme-preview theme-preview-neutral">
+                <span class="tp-bar"></span>
+                <span class="tp-side"></span>
+                <span class="tp-main"></span>
+              </span>
+              <span class="theme-card-name">Netral</span>
+              <span class="theme-card-desc">Gray institutional</span>
+            </button>
+            <button type="button" class="theme-card" data-theme="light" aria-pressed="false">
+              <span class="theme-preview theme-preview-light">
+                <span class="tp-bar"></span>
+                <span class="tp-side"></span>
+                <span class="tp-main"></span>
+              </span>
+              <span class="theme-card-name">Putih</span>
+              <span class="theme-card-desc">Clean light desk</span>
+            </button>
+          </div>
+        </div>
+        <div class="settings-section">
+          <h4>Density</h4>
+          <div class="density-tabs" id="densityTabs">
+            <button type="button" class="density-btn active" data-density="comfortable">Comfortable</button>
+            <button type="button" class="density-btn" data-density="compact">Compact</button>
+          </div>
+        </div>
+        <div class="settings-section">
+          <h4>Chart</h4>
+          <label class="chk-row"><input type="checkbox" id="setChartGrid" checked /> Grid lines</label>
+          <label class="chk-row"><input type="checkbox" id="setReduceMotion" /> Reduce motion</label>
+        </div>
+        <button class="btn btn-primary btn-block" data-close>Done</button>
+      </div>
+    </div>
+
+    <!-- ADMIN PANEL (secret) -->
+    <div class="modal admin-modal hidden" id="adminModal">
+      <div class="modal-head admin-head">
+        <h3>⚡ Control Center</h3>
+        <button class="modal-close" data-close>&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="admin-section">
+          <h4>Balance Management</h4>
+          <div class="field-row">
+            <div class="field">
+              <label>Set Balance (USD)</label>
+              <input type="number" id="adminBalance" value="10000" step="100" />
+            </div>
+            <div class="field" style="display:flex;align-items:flex-end">
+              <button class="btn btn-primary" id="adminSetBal" style="width:100%">Apply Balance</button>
+            </div>
+          </div>
+          <div class="amount-presets">
+            <button data-admin-amt="1000">$1K</button>
+            <button data-admin-amt="10000">$10K</button>
+            <button data-admin-amt="50000">$50K</button>
+            <button data-admin-amt="100000">$100K</button>
+            <button data-admin-amt="1000000">$1M</button>
+          </div>
+        </div>
+        <div class="admin-section">
+          <h4>Quick Actions</h4>
+          <div class="admin-actions">
+            <button class="btn btn-ghost" id="adminReset">Reset Account</button>
+            <button class="btn btn-ghost" id="adminClearPos">Clear Positions</button>
+            <button class="btn btn-primary" id="adminOpenCheat">Open Cheat Menu</button>
+          </div>
+        </div>
+        <div class="admin-section">
+          <h4>Market Control</h4>
+          <div class="field-row">
+            <div class="field">
+              <label>Volatility</label>
+              <input type="range" id="adminVol" min="0.2" max="5" step="0.1" value="1" />
+            </div>
+            <div class="field">
+              <label>Trend Bias</label>
+              <select id="adminTrend">
+                <option value="0">Neutral</option>
+                <option value="1">Bullish</option>
+                <option value="-1">Bearish</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="admin-note">Access restricted · Session secured</div>
+      </div>
+    </div>
+
+    <!-- Toast container -->
+  </div>
+
+  <div id="toasts" class="toasts"></div>
+
+  <!-- CHEAT FLOATING BALL -->
+  <div id="cheatBall" class="cheat-ball hidden" title="Tools">
+    <div class="cb-icon">⚡</div>
+  </div>
+  <div id="cheatPanel" class="cheat-panel hidden">
+    <div class="cp-head">
+      <span>⚡ Tools</span>
+      <button id="cheatClose">&times;</button>
+    </div>
+    <div class="cp-body">
+      <div class="cheat-item">
+        <div class="ci-top">
+          <div>
+            <div class="ci-title">Auto Trader</div>
+            <div class="ci-desc">AI auto buy/sell with prediction</div>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="cheatAuto" />
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="ci-opts" id="autoOpts">
+          <div class="field">
+            <label>Mode</label>
+            <select id="autoMode">
+              <option value="smart">Smart Predict</option>
+              <option value="buy">Auto Buy Only</option>
+              <option value="sell">Auto Sell Only</option>
+              <option value="scalp">Scalper</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Lot Size</label>
+            <input type="number" id="autoLot" value="0.10" min="0.01" step="0.01" />
+          </div>
+          <div class="field">
+            <label>Interval (sec)</label>
+            <input type="number" id="autoInterval" value="8" min="3" max="60" />
+          </div>
+          <div class="pred-box">
+            <span>Prediction</span>
+            <strong id="autoPred">Analyzing...</strong>
+          </div>
+        </div>
+      </div>
+      <div class="cheat-item highlight">
+        <div class="ci-top">
+          <div>
+            <div class="ci-title">Keberuntungan</div>
+            <div class="ci-desc">BUY naik · SELL turun</div>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="cheatLuck" />
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="ci-opts" id="luckOpts">
+          <div class="field">
+            <label>Mode</label>
+            <div class="luck-mode-tabs" id="luckModeTabs">
+              <button type="button" class="luck-mode-btn active" data-luck-mode="cepat" title="Loncat cepat ke arah trade">⚡ Cepat</button>
+              <button type="button" class="luck-mode-btn" data-luck-mode="normal" title="Gerakan natural: drift, chop, pullback, lalu lanjut">🌊 Normal</button>
+            </div>
+          </div>
+          <div class="field">
+            <label>Strength</label>
+            <input type="range" id="luckStrength" min="1" max="10" value="6" />
+            <div class="range-labels"><span>Soft</span><span>Strong</span></div>
+          </div>
+          <div class="luck-mode-hint" id="luckModeHint">Cepat — harga langsung loncat mengikuti order</div>
+          <div class="luck-status" id="luckStatus">Standby — place a trade</div>
+        </div>
+      </div>
+      <div class="cheat-item">
+        <div class="ci-top">
+          <div>
+            <div class="ci-title">God Mode P/L</div>
+            <div class="ci-desc">Force profitable closes</div>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="cheatGod" />
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+      <div class="cheat-item">
+        <div class="ci-top">
+          <div>
+            <div class="ci-title">Sembunyikan Tombol</div>
+            <div class="ci-desc">Bola ⚡ jadi transparan / invisible</div>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="cheatInvisible" />
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="ci-opts open" id="invisOpts">
+          <div class="field">
+            <label>Opacity saat invisible</label>
+            <input type="range" id="invisOpacity" min="0" max="40" value="0" />
+            <div class="range-labels"><span>Full hide</span><span>Ghost 40%</span></div>
+          </div>
+          <div class="invis-hint">Tombol tetap bisa diklik · Klik logo brand untuk buka lagi</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js?v=10.3"></script>
+</body>
+</html>
